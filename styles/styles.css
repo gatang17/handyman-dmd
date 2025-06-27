@@ -1,0 +1,44 @@
+h1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 3rem;
+    color: #1c75bc;
+}
+
+h2{
+    padding: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   
+}
+
+p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+    
+}
+
+
+.img_logo{
+    height: 80px;
+}
+
+.cont_title{
+    padding: 15px;
+    height: 15%;
+    text-align: center;
+    
+}
+
+.sec_2{
+    background-color: #1c74bc2f;
+padding: 2rem;
+    
+}
+
+.dropdown-item {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }

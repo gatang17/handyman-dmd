@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | Handyman DMD</title>
+  <link rel="icon" href="/img/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+
+<body style="margin: 1rem; padding: 2rem;">
+  <!-- NAVBAR -->
+  <section>
+    <nav class="navbar navbar-expand-lg px-4">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo/300ppi/Asset 1.png" alt="Logo" height="80" class="shadow">
+        </a>
+    
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+    
+            <!-- Dropdown de Servicios -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Services
+              </a>
+              <ul class="dropdown-menu" >
+                <li><a class="dropdown-item" href="plumbing.html">Plumbing</a></li>
+                <li><a class="dropdown-item" href="hvac.html">HVAC Maintenance</a></li>
+                <li><a class="dropdown-item" href="electricity.html">Electricidad</a></li>
+                <li><a class="dropdown-item" href="others.html">Otros Servicios</a></li>
+              </ul>
+            </li>
+    
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+     </section>
+
+  <!-- Título -->
+  <section class="container mt-5 text-center">
+    <h1 class="mb-3" style="color: #1c75bc;">Contáctanos</h1>
+    <p>¿Tienes preguntas o necesitas un estimado?</p>
+  </section>
+
+  <!-- Información básica de contacto -->
+  <section id="info-contacto" class="container text-center mt-4">
+    <p><strong>Teléfono:</strong> <a href="tel:5021234567">502-123-4567</a></p>
+    <p><strong>Email:</strong> <a href="#" id="abrir-form">gretelalvareztang@gmail.com</a></p>
+  </section>
+
+  <!-- Formulario oculto inicialmente -->
+  <section id="formulario-contacto" class="container mt-4 mb-5 d-none">
+    <form action="https://formsubmit.co/gretelalvareztang@gmail.com" method="POST" class="shadow p-4 rounded bg-light">
+
+      <div class="text-end">
+        <button type="button" id="cerrar-form" class="btn btn-sm btn-secondary">Cerrar ✕</button>
+      </div>
+
+      <!-- Nombre -->
+      <div class="mb-3">
+        <label for="name" class="form-label">Nombre completo</label>
+        <input type="text" name="name" id="name" class="form-control" required>
+      </div>
+
+      <!-- Email -->
+      <div class="mb-3">
+        <label for="email" class="form-label">Correo electrónico</label>
+        <input type="email" name="email" id="email" class="form-control" required>
+      </div>
+
+      <!-- Teléfono -->
+      <div class="mb-3">
+        <label for="phone" class="form-label">Teléfono</label>
+        <input type="text" name="phone" id="phone" class="form-control">
+      </div>
+
+      <!-- Mensaje -->
+      <div class="mb-3">
+        <label for="message" class="form-label">Mensaje</label>
+        <textarea name="message" id="message" rows="5" class="form-control" placeholder="Describe brevemente el problema o lo que necesitas..." required></textarea>
+      </div>
+
+      <!-- Campos ocultos -->
+      <input type="hidden" name="_next" value="https://gatang17.github.io/handyman-dmd/thankyou.html">
+      <input type="hidden" name="_captcha" value="false">
+
+      <!-- Botón de envío -->
+      <div class="text-center">
+        <button type="submit" class="btn" style="background-color: #1c75bc; color: white;">Enviar mensaje</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Lógica para mostrar el formulario solo si hay ?service=... o si dan clic en el email -->
+  <script>
+    function getServiceFromURL() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("service");
+    }
+
+    function mostrarFormulario(service) {
+      document.getElementById("info-contacto").classList.add("d-none");
+      document.getElementById("formulario-contacto").classList.remove("d-none");
+      const messageField = document.getElementById("message");
+      if (service) {
+        messageField.value = `Hola, estoy interesado(a) en el servicio de ${service.toLowerCase()}. Por favor contáctenme para más detalles.`;
+      }
+      messageField.focus();
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const service = getServiceFromURL();
+      if (service) {
+        mostrarFormulario(service);
+      }
+
+      // Clic en el email para mostrar formulario
+      document.getElementById("abrir-form").addEventListener("click", (e) => {
+        e.preventDefault();
+        mostrarFormulario(null);
+      });
+
+      // Botón para cerrar el formulario y volver a mostrar los datos
+      document.getElementById("cerrar-form").addEventListener("click", () => {
+        document.getElementById("formulario-contacto").classList.add("d-none");
+        document.getElementById("info-contacto").classList.remove("d-none");
+      });
+    });
+  </script>
+</body>
+</html>

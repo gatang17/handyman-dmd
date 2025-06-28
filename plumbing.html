@@ -25,53 +25,17 @@
   -->
 
   <!-- Tu JS personalizado -->
-  <script src="/css/javascript/script.js" defer></script>
+  <script src="styles/script/script.js"></script>
 </head>
 
-<body style="margin: 1rem; padding: 2rem;">
+<body >
   <!-- NAVBAR -->
    <section>
-    <nav class="navbar navbar-expand-lg px-4">
-        <a class="navbar-brand" href="index.html">
-          <img src="images/logo/300ppi/Asset 1.png" alt="Logo" height="80" class="shadow">
-        </a>
-    
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-    
-            <!-- Dropdown de Servicios -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Services
-              </a>
-              <ul class="dropdown-menu" >
-                <li><a class="dropdown-item" href="plumbing.html">Plumbing</a></li>
-                <li><a class="dropdown-item" href="hvac.html">HVAC Maintenance</a></li>
-                <li><a class="dropdown-item" href="electricity.html">Electricidad</a></li>
-                <li><a class="dropdown-item" href="others.html">Otros Servicios</a></li>
-              </ul>
-            </li>
-    
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+    <div id="nav_bar"></div>
      </section>
 
 <section class="row" style="justify-content: center; text-align: center;">
-    <h2>Plumbing Service Estimate</h2>
+    <h2>Plumbing Services</h2>
 
 
 </section>
@@ -141,7 +105,7 @@
         </div>
       </div>
   
-      
+
       <!-- Desagües -->
       <div class="col-md-4">
         <div class=" h-100 sec_2 shadow">
@@ -180,7 +144,10 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
         </div>
         <div class="modal-body text-center">
-          <h4 class="mb-2" style="color: #1cbc69;">💲 $25 + $0.50 por milla recorrida</h4>
+            <h4 class="mb-2" style="color: #1cbc69;">
+                💲 $<span id="precioBase"></span> + $<span id="precioMilla"></span> por milla recorrida
+              </h4>
+              
           <p class="mb-0 text-muted">
             Incluye evaluación del problema y presupuesto personalizado.<br>
             Si decides hacer el trabajo con nosotros, este monto <strong>se descuenta del total</strong>.<br>
@@ -194,5 +161,6 @@
 
   <!-- Bootstrap JS (necesario para dropdowns y colapsables) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+ 
 </body>
 </html>

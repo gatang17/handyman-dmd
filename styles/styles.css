@@ -1,108 +1,164 @@
-body{
+/* Estilos generales */
+body {
+  padding: 1rem;
+  background-color: #d1a61732;
+}
+
+h1 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 4rem; /* tamaño base */
+  color: #1c75bc;
+  letter-spacing: 1px;
+}
+
+h2 {
+  padding: 2rem;
+  font-size: 2.5rem; /* tamaño base */
+  font-weight: 700;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: white;
+  letter-spacing: 1px;
+}
+
+h3 {
+  padding: 1rem;
+  font-size: 3rem;
+  font-weight: 900;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #1c75bc;
+  letter-spacing: 1px;
+}
+
+p {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.1rem;
+  color: #222222;
+  line-height: 1.6;
+}
+
+
+
+/* Text truncation for mobile */
+@media (max-width: 767.98px) {
+
+  .text-truncate-mobile {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .text-truncate-mobile.expanded {
+    -webkit-line-clamp: unset !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+  .show-more-btn {
+    display: inline-block;
+  }
+
+  /* Adjust headings for mobile if quieres, por ejemplo */
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
     padding: 1rem;
+    font-size: 1.8rem;
+  }
 }
 
+/* Desktop styles */
+@media (min-width: 768px) {
+  .text-truncate-mobile {
+    display: block !important;
+    -webkit-line-clamp: unset !important;
+    overflow: visible !important;
+  }
+  .show-more-btn {
+    display: none !important;
+  }
 
-h1{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    text-transform: uppercase;
-    font-weight: 900;
-    font-size: 8rem;
-    color: #1c75bc;
+  /* Keep headings bigger on desktop */
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    padding: 2rem;
+    font-size: 2.5rem;
+  }
 }
 
-h2{
-    padding: 1rem;
-    font-size: 5rem;
-    font-weight: 700;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: white;
-   
+/* Otros estilos ya limpios, sin repetir */
+.service-text {
+  background-color: white;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  transition: transform 0.2s ease;
 }
 
-p{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  
-    
+.service-text:hover {
+  transform: translateY(-5px);
 }
 
-
-.img_logo{
-    height: 80px;
+.service-row {
+  gap: 1rem;
+  position: relative;
 }
 
-.cont_title{
-    padding: 15px;
-    height: 15%;
-    text-align: center;
-    
+.service-img-wrapper {
+  padding-top: 2rem;
+  position: relative;
 }
 
-.sec_2{
-    background-color: #1c74bcd3;
-padding: 2rem;
-    
+.service-img {
+  max-width: 90%;
+  position: relative;
+  top: -40px;
+  z-index: 10;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+}
+
+.img_logo {
+  height: 80px;
+}
+
+.cont_title {
+  padding: 15px;
+  height: 15%;
+  text-align: center;
+}
+
+.sec_2 {
+  background-color: #1c74bcd3;
+  padding: 2rem;
+}
+
+.sec_p2 {
+  background-color: white;
+  padding: 2rem;
+  border-color: #1c75bc;
+  border-width: 3px;
 }
 
 .dropdown-item {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-
-  .service-row {
-    gap: 1rem;
-    position: relative;
-  }
-  
-  .service-img-wrapper {
-    /* Para que la imagen sobresalga sin tapar texto */
-    padding-top: 2rem; /* da espacio arriba */
-    position: relative;
-  }
-  
-  .service-img {
-    max-width: 90%;
-    position: relative;
-    top: -40px; /* sobresalir hacia arriba */
-    z-index: 10;
-    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
-    border-radius: 0.25rem;
-  }
-  
-  .service-text {
-    background-color: white;
-    z-index: 5;
-    /* Opcional: para que la tarjeta tenga borde o sombra */
-    border-radius: 0.25rem;
-  }
-  
-  @media (max-width: 767.98px) {
-    .service-img {
-      position: relative;
-      top: 0;
-      max-width: 100%;
-      margin-bottom: 1rem;
-    }
-    .service-img-wrapper {
-      padding-top: 0;
-    }
-
-
-h1{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    text-transform: uppercase;
-    font-weight: 900;
-    font-size: 4rem;
-    color: #1c75bc;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
-h2{
-    padding: 2rem;
-    font-size: 2.5rem;
-    font-weight: 700;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: white;
-   
+.btn {
+  background-color: #1c75bc;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
 }
-  }
-  
+
+.btn:hover {
+  background-color: #155a96;
+  color: #f4c430;
+  font-weight: bold;
+}

@@ -64,7 +64,7 @@ function getServiceFromURL() {
             </li>
     
             <li class="nav-item">
-              <a class="nav-link" href="about.html">About Us</a>
+              <a class="nav-link" href="aboutus.html">About Us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
@@ -77,7 +77,7 @@ function getServiceFromURL() {
     document.getElementById('nav_bar').innerHTML = sectionHTML;
   });
 
-
+/*precios base*/
   document.addEventListener("DOMContentLoaded", () => {
     const precioBase = 60;
     const precioMilla = 0.5;
@@ -85,7 +85,23 @@ function getServiceFromURL() {
     document.getElementById("precioBase").textContent = precioBase;
     document.getElementById("precioMilla").textContent = precioMilla.toFixed(2);
   });
-  
 
+
+  /*ver mas ver menos*/
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.show-more-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const paragraph = button.previousElementSibling;
+        if (paragraph.classList.contains('expanded')) {
+          paragraph.classList.remove('expanded');
+          button.textContent = 'Leer más';
+        } else {
+          paragraph.classList.add('expanded');
+          button.textContent = 'Ver menos';
+        }
+      });
+    });
+  });
+  
   
 

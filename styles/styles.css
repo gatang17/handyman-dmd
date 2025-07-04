@@ -8,7 +8,7 @@ h1 {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   text-transform: uppercase;
   font-weight: 900;
-  font-size: 4rem; /* tamaño base */
+  font-size: 5rem; /* tamaño base */
   color: #1c75bc;
   letter-spacing: 1px;
 }
@@ -82,7 +82,7 @@ p {
 
   /* Keep headings bigger on desktop */
   h1 {
-    font-size: 4rem;
+    font-size: 5rem;
   }
   h2 {
     padding: 2rem;

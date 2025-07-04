@@ -40,6 +40,7 @@ p {
 
 
 
+
 /* Text truncation for mobile */
 @media (max-width: 767.98px) {
 
@@ -82,7 +83,7 @@ p {
 
   /* Keep headings bigger on desktop */
   h1 {
-    font-size: 5rem;
+    font-size: 8rem;
   }
   h2 {
     padding: 2rem;

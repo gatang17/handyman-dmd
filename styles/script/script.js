@@ -79,7 +79,7 @@ function getServiceFromURL() {
 
 /*precios base*/
   document.addEventListener("DOMContentLoaded", () => {
-    const precioBase = 60;
+    const precioBase = 65;
     const precioMilla = 0.5;
   
     document.getElementById("precioBase").textContent = precioBase;

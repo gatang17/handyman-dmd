@@ -32,6 +32,23 @@ function getServiceFromURL() {
     });
   });
 
+  //muestra el mensaje de enviado y regresa a index
+  document.getElementById("formulario").addEventListener("submit", function (e) {
+    e.preventDefault();
+  
+    // Oculta el formulario
+    document.getElementById("formulario-contacto").classList.add("d-none");
+  
+    // Muestra el mensaje
+    const mensaje = document.getElementById("mensaje-enviado");
+    mensaje.classList.remove("d-none");
+  
+    // Espera 3 segundos y redirige a index.html
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 3000);
+  });
+  
 
   document.addEventListener('DOMContentLoaded', function() {
     const sectionHTML = `

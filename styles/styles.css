@@ -18,7 +18,7 @@ h2 {
   font-size: 2.5rem; /* tamaño base */
   font-weight: 700;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  color: white;
+  color: #155a96;
   letter-spacing: 1px;
 }
 
@@ -40,6 +40,11 @@ p {
 
 
 
+
+.dropdown-menu{
+
+  background-color: rgba(41, 90, 159, 0.4); /* fondo semitransparente */
+}
 
 /* Text truncation for mobile */
 @media (max-width: 767.98px) {
@@ -82,9 +87,7 @@ p {
   }
 
   /* Keep headings bigger on desktop */
-  h1 {
-    font-size: 8rem;
-  }
+  
   h2 {
     padding: 2rem;
     font-size: 2.5rem;
@@ -132,7 +135,7 @@ p {
 }
 
 .sec_2 {
-  background-color: #1c74bcd3;
+  
   padding: 2rem;
 }
 
@@ -149,7 +152,7 @@ p {
 }
 
 .btn {
-  background-color: #1c75bc;
+  background-color: #cc9a06;
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;

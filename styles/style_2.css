@@ -49,3 +49,20 @@ text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
     text-align: right;
   }
   
+  /* Efecto de saltito y glow */
+.glow-bounce {
+  animation: bounce 1s infinite;
+  text-shadow: 0 0 5px #1c75bc, 0 0 10px #1c75bc;
+}
+
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Efecto sin glow y sin movimiento */
+.static-icon {
+  animation: none;
+  box-shadow: none;
+}

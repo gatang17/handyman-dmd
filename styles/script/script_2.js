@@ -86,6 +86,7 @@ document.addEventListener('DOMContentLoaded',function(){
     navbarMenu.style.display = "none"; // menú principal oculto
     subMenu.style.visibility = "hidden"; // submenú oculto
     subMenuContainer.classList.remove("active-submenu");
+    icon.classList.add("glow-bounce");
   
     // Botón principal
     icon.addEventListener("click", () => {
@@ -97,12 +98,16 @@ document.addEventListener('DOMContentLoaded',function(){
         icon.classList.remove("fa-angles-down");
         icon.classList.add("fa-angles-up");
         icon.style.color = "silver";
+        icon.classList.remove("glow-bounce");
+        icon.classList.add("static-icon");
       } else {
         // Cerrar menú principal y resetear submenú
         navbarMenu.style.display = "none";
         icon.classList.remove("fa-angles-up");
         icon.classList.add("fa-angles-down");
         icon.style.color = "grey";
+        icon.classList.remove("static-icon");
+        icon.classList.add("glow-bounce");
   
         subMenu.style.visibility = "hidden"; // ocultar submenú
         subMenuContainer.classList.remove("active-submenu"); // quitar color activo
@@ -121,6 +126,11 @@ document.addEventListener('DOMContentLoaded',function(){
     });
   });
   
+
+
+
+
+
 
 document.addEventListener('DOMContentLoaded',function(){
   const footer_menu=` 

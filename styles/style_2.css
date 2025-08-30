@@ -35,25 +35,27 @@ text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
   .fa-angle-right:hover{
     visibility: visible;
   }
-
+  /* Efecto de saltito y glow */
+  .glow-bounce {
+    animation: bounce 1s infinite;
+    text-shadow: 0 0 5px #1c75bc, 0 0 10px #1c75bc;
+  }
+  
+  
   /*menu footer*/
-
-
   .sec_3 {
-    background-color: #fff;  /* tu color blanco */
+    background-color: #1c75bc ;  /* tu color blanco */
     padding: 2rem;
    }
   
     .sec_3 p.clear_text {
-    color: gray;
+    color: rgb(255, 255, 255);
     text-align: right;
+    line-height: 0.5;
   }
-  
-  /* Efecto de saltito y glow */
-.glow-bounce {
-  animation: bounce 1s infinite;
-  text-shadow: 0 0 5px #1c75bc, 0 0 10px #1c75bc;
-}
+  .h2_f{
+    color: #fff;
+  }
 
 
 @keyframes bounce {

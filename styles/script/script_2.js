@@ -143,32 +143,20 @@ document.addEventListener('DOMContentLoaded',function(){
   
       <div class="col-md-5 d-flex flex-column align-items-center" "> 
       
-        <h2>CONTACT</h2 >
-        <p><a href="tel:5029123590" style="color: gray;">(502) 912-3590</a></p>
-        <p><a href="#" id="abrir-form" style="color: gray;">handydmd@gmail.com</a></p>
+        <h2 class="h2_f">CONTACT</h2 >
+        <p><a href="tel:5029123590" style="color: #FFFF;">(502) 912-3590</a></p>
+        <p><a href="#" id="abrir-form" style="color: #ffff;">handydmd@gmail.com</a></p>
     
       </div>
   
       <div class="col-md-3 d-flex flex-column align-items-center"> 
-        <h2>QUICK LINKS</h2>
+        <h2 class="h2_f">QUICK LINKS</h2>
         <div>
           <ul class="navbar-nav ">
-            <li class="nav-item ">
-              <a class="nav-link " href="index.html">Home</a>
-            </li>
-    
-            <!-- Dropdown de Servicios -->
-            <li class="nav-item dropdown">
-              <a class="nav-link " href="#services"> Services</a>
-              
-            </li>
-    
-            <li class="nav-item">
-              <a class="nav-link" href="aboutus.html">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " href="contact.html">Contact</a>
-            </li>
+            <li class="nav-item "><a class="nav-link" href="index.html" style="color: #ffff;">Home</a></li>
+            <li class="nav-item dropdown"><a class="nav-link " href="#services" style="color: #ffff;"> Services</a></li>
+            <li class="nav-item"><a class="nav-link " href="aboutus.html" style="color: #ffff;">About Us</a></li>
+            <li class="nav-item"><a class="nav-link " href="contact.html" style="color: #ffff;">Contact</a></li>
           </ul>
         </div>
       </div>

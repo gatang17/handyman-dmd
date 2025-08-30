@@ -2,7 +2,7 @@
 body {
 
   padding: 1rem;
-  background-color: #d1a61732;
+  
 }
 
 h1 {
@@ -10,7 +10,7 @@ h1 {
   text-transform: uppercase;
   font-weight: 900;
   font-size: 5rem; /* tamaño base */
-  color: #1c75bc;
+  color: #ffffff;
   letter-spacing: 1px;
 }
 
@@ -38,14 +38,25 @@ p {
   color: #222222;
   line-height: 1.6;
 }
+#services {
+  position: relative;  /* necesario para ::before */
+  overflow: hidden;    /* opcional, para recortar el blur si se desborda */
 
-
-
-
-.dropdown-menu{
-
-  background-color: rgba(41, 90, 159, 0.4); /* fondo semitransparente */
 }
+
+#services::before {
+  content: "";                       /* obligatorio */
+  position: absolute;                /* cubrir todo el contenedor */
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(rgba(255,255,255,255), rgba(255,255,255,0.8)), url(/images/logo/300ppi/Asset\ 2.png);
+  background-repeat: repeat;       /* repite horizontal y vertical */
+  background-size: 20% AUTO;
+    filter: blur(2px);                 /* desenfoque */
+  z-index: -1;                        /* detrás del contenido */
+  pointer-events: none;              /* que no bloquee clicks */
+}
+
 
 /* Text truncation for mobile */
 @media (max-width: 767.98px) {
@@ -153,17 +164,15 @@ p {
 }
 
 .btn {
-  background-color: #cc9a06;
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  font-weight: 700;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
+
+  background-color: #ffffff;
+  color: #155a96;
+  border: solid;
 }
 
 .btn:hover {
   background-color: #155a96;
-  color: #f4c430;
-  font-weight: bold;
+  color: white;
+  border: none;
+  
 }

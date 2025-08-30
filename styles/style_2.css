@@ -1,0 +1,51 @@
+
+/*menu superior*/
+#toggleIcon:hover{
+color: #1c75bc !important;
+font-size: 2rem;
+text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.menu3 {
+    color: gray;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .con_menu3:hover *,
+  .con_menu3:hover {
+    color: #fff;
+    background-color: #1c75bc;
+    cursor: pointer;
+  }
+  
+  /* esta clase solo se activa cuando esta toggle y onClick, es decir que se queda activa y se desactiva en el siguiente click*/
+  .active-submenu {
+    color: #fff !important;
+    background-color: #1c75bc !important;
+  }
+  
+  #menu4 {
+    visibility: hidden;
+  }
+  .fa-angle-right{
+    visibility: hidden;
+  }
+
+  #serv:hover *,
+  .fa-angle-right:hover{
+    visibility: visible;
+  }
+
+  /*menu footer*/
+
+
+  .sec_3 {
+    background-color: #fff;  /* tu color blanco */
+    padding: 2rem;
+   }
+  
+    .sec_3 p.clear_text {
+    color: gray;
+    text-align: right;
+  }
+  

@@ -47,7 +47,7 @@ p {
   position: absolute;                /* cubrir todo el contenedor */
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: linear-gradient(rgba(255,255,255,255), rgba(255,255,255,0.8)), url(/images/logo/300ppi/Asset_2.png);
+  background: linear-gradient(rgba(255,255,255,255), rgba(255,255,255,0.8)), url('images/logo/300ppi/Asset_2.png');
   background-repeat: repeat;       /* repite horizontal y vertical */
   background-size: 20% AUTO;
     filter: blur(2px);                 /* desenfoque */
@@ -66,7 +66,7 @@ p {
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .text-truncate-mobile.expanded {
+  .text-truncate-mobile.expanded { 
     -webkit-line-clamp: unset !important;
     overflow: visible !important;
     display: block !important;

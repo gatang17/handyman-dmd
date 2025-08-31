@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded',function(){
         <div>
           <ul class="navbar-nav ">
             <li class="nav-item "><a class="nav-link" href="index.html" style="color: #ffff;">Home</a></li>
-            <li class="nav-item dropdown"><a class="nav-link " href="#services" style="color: #ffff;"> Services</a></li>
+            <li class="nav-item dropdown"><a class="nav-link " href="index.html#services" style="color: #ffff;"> Services</a></li>
             <li class="nav-item"><a class="nav-link " href="aboutus.html" style="color: #ffff;">About Us</a></li>
             <li class="nav-item"><a class="nav-link " href="contact.html" style="color: #ffff;">Contact</a></li>
           </ul>

@@ -44,88 +44,92 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 */
-
-document.addEventListener('DOMContentLoaded',function(){
-    const menu_collap=`
-         
-  <div class="row"  style="width: 100vw;"> <!---Esto es todo el banner-->
-      <div class="d-flex justify-content-center align-items-center mb-5"><a href="index.html"><img src="images/logo/300ppi/Asset 1.png" alt="Logo" height="100" class="shadow"></a></div>
-        <div class="d-flex justify-content-center align-items-center mb-3"><i id="toggleIcon" class="fa-solid fa-angles-down " type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"></i></div>
-     
-      <div class="row" id="navbarMenu"> <!--Aqui empieza el Menu General-->
-          <div class="col" > <!--esta para q quede horizontal entre ellos-->
-              <hr class="border border-1 border-secondary m-0">
-               <!-- esto para q se coloreee toda la columna/fila porque sin este contenedor solo pinta el link-->
-              <div class="d-flex col con_menu3 " style="justify-content: flex-end; "><a class="text-decoration-none menu3 mb-3" href="index.html">HOME </a> </div> <hr class="border border-1 border-secondary m-0"><!---linea de separacion-->
-              <div id="cont_sub_menu" class="d-flex col con_menu3" style="justify-content: flex-end; "><a id="serv" class="text-decoration-none menu3 mb-3">Servicios <i class="fa-solid fa-angle-right"></i></a></div><hr class="border border-1 border-secondary m-0">
-              <div class="d-flex col con_menu3" style="justify-content: flex-end; "><a class="text-decoration-none menu3 mb-3" href="contact.html">Contacto</a></div><hr class="border border-1 border-secondary m-0 mb-3">
-          </div>
-          <!--SubMenu q sale en la columna derecha-->
-          <div id="menu4" class="d-flex  col" style="justify-content: flex-start; align-items: center;">
-              <div class="col" >
-                  <div class="d-flex col con_menu3" style="justify-content: flex-start; "> <a class="text-decoration-none menu3" href="plumbing.html">Plomeria</a>  </div>  <hr class="border border-1 border-secondary m-0">
-                  <div class="d-flex col con_menu3" style="justify-content: flex-start; "> <a class="text-decoration-none menu3" href="hvac.html">HVAC Mantenimiento</a>  </div>  <hr class="border border-1 border-secondary m-0">
-                  <div class="d-flex col con_menu3" style="justify-content: flex-start; "> <a class="text-decoration-none menu3"href="electricity.html">Electricidad</a>  </div>  <hr class="border border-1 border-secondary m-0">
-              </div>
-          </div>
+document.addEventListener("DOMContentLoaded", () => {
+  // ----- INSERTAR MENU DINÁMICO -----
+  const menuHTML = `
+  <div class="row" style="width: 100vw;">
+    <div class="d-flex justify-content-center align-items-center mb-5">
+      <a href="index.html"><img src="images/logo/300ppi/Asset 1.png" alt="Logo" height="100" class="shadow"></a>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mb-3">
+      <i id="toggleIcon" class="fa-solid fa-angles-down fs-1 glow-bounce" style="color: grey; cursor: pointer;"></i>
+    </div>
+    <div class="row" id="navbarMenu" style="display: none;">
+      <div class="col">
+        <hr class="border border-1 border-secondary m-0">
+        <div class="d-flex col con_menu3" style="justify-content: flex-end;">
+          <a class="text-decoration-none menu3 mb-3" href="index.html">HOME</a>
+        </div>
+        <hr class="border border-1 border-secondary m-0">
+        <div id="cont_sub_menu" class="d-flex col con_menu3" style="justify-content: flex-end; cursor: pointer;">
+          <a class="text-decoration-none menu3 mb-3">Servicios <i class="fa-solid fa-angle-right"></i></a>
+        </div>
+        <hr class="border border-1 border-secondary m-0">
+        <div class="d-flex col con_menu3" style="justify-content: flex-end;">
+          <a class="text-decoration-none menu3 mb-3" href="contact.html">Contacto</a>
+        </div>
+        <hr class="border border-1 border-secondary m-0 mb-3">
       </div>
+      <div id="menu4" class="d-flex col" style="justify-content: flex-start; align-items: center; visibility: hidden;">
+        <div class="col">
+          <div class="d-flex col con_menu3" style="justify-content: flex-start;"><a class="text-decoration-none menu3" href="plumbing.html">Plomeria</a></div>
+          <hr class="border border-1 border-secondary m-0">
+          <div class="d-flex col con_menu3" style="justify-content: flex-start;"><a class="text-decoration-none menu3" href="hvac.html">HVAC Mantenimiento</a></div>
+          <hr class="border border-1 border-secondary m-0">
+          <div class="d-flex col con_menu3" style="justify-content: flex-start;"><a class="text-decoration-none menu3" href="electricity.html">Electricidad</a></div>
+          <hr class="border border-1 border-secondary m-0">
+        </div>
+      </div>
+    </div>
   </div>
   `;
-    document.getElementById('nav_bar2').innerHTML=menu_collap;
+  document.getElementById("nav_bar2").innerHTML = menuHTML;
+
+  // ----- ELEMENTOS -----
+  const icon = document.getElementById("toggleIcon");
+  const navbarMenu = document.getElementById("navbarMenu");
+  const subMenuContainer = document.getElementById("cont_sub_menu");
+  const subMenu = document.getElementById("menu4");
+
+  // ----- ESTADO INICIAL -----
+  icon.classList.add("fa-angles-down", "glow-bounce");
+  icon.style.color = "grey";
+  navbarMenu.style.display = "none";
+  subMenu.style.visibility = "hidden";
+  subMenuContainer.classList.remove("active-submenu");
+
+  // ----- CLICK BOTON PRINCIPAL -----
+  icon.addEventListener("click", () => {
+    const menuHidden = window.getComputedStyle(navbarMenu).display === "none";
+
+    if (menuHidden) {
+      // Abrir menu principal
+      navbarMenu.style.display = "flex";
+      icon.classList.remove("fa-angles-down", "glow-bounce");
+      icon.classList.add("fa-angles-up");
+      icon.style.color = "silver";
+    } else {
+      // Cerrar menu principal y reset submenú
+      navbarMenu.style.display = "none";
+      icon.classList.remove("fa-angles-up");
+      icon.classList.add("fa-angles-down", "glow-bounce");
+      icon.style.color = "grey";
+
+      subMenu.style.visibility = "hidden";
+      subMenuContainer.classList.remove("active-submenu");
+    }
   });
-  
-  document.addEventListener("DOMContentLoaded", () => {
-    const icon = document.getElementById("toggleIcon");
-    const navbarMenu = document.getElementById("navbarMenu");
-    const subMenuContainer = document.getElementById("cont_sub_menu");
-    const subMenu = document.getElementById("menu4");
-  
-    // Estado inicial al cargar la página
-    icon.classList.add("fa-angles-down");
-    icon.style.color = "grey";
-    navbarMenu.style.display = "none"; // menú principal oculto
-    subMenu.style.visibility = "hidden"; // submenú oculto
-    subMenuContainer.classList.remove("active-submenu");
-    icon.classList.add("glow-bounce");
-  
-    // Botón principal
-    icon.addEventListener("click", () => {
-      const isHidden = window.getComputedStyle(navbarMenu).display === "none";
-  
-      if (isHidden) {
-        // Abrir menú principal
-        navbarMenu.style.display = "flex";
-        icon.classList.remove("fa-angles-down");
-        icon.classList.add("fa-angles-up");
-        icon.style.color = "silver";
-        icon.classList.remove("glow-bounce");
-        icon.classList.add("static-icon");
-      } else {
-        // Cerrar menú principal y resetear submenú
-        navbarMenu.style.display = "none";
-        icon.classList.remove("fa-angles-up");
-        icon.classList.add("fa-angles-down");
-        icon.style.color = "grey";
-        icon.classList.remove("static-icon");
-        icon.classList.add("glow-bounce");
-  
-        subMenu.style.visibility = "hidden"; // ocultar submenú
-        subMenuContainer.classList.remove("active-submenu"); // quitar color activo
-      }
-    });
-  
-    // Click en "Servicios"
-    subMenuContainer.addEventListener("click", (e) => {
-      e.preventDefault();
-      // Solo alternar si el menú principal está abierto
-      if (window.getComputedStyle(navbarMenu).display !== "none") {
-        subMenu.style.visibility =
-          subMenu.style.visibility === "visible" ? "hidden" : "visible";
-        subMenuContainer.classList.toggle("active-submenu");
-      }
-    });
+
+  // ----- CLICK EN SERVICIOS -----
+  subMenuContainer.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (window.getComputedStyle(navbarMenu).display !== "none") {
+      const visible = window.getComputedStyle(subMenu).visibility === "visible";
+      subMenu.style.visibility = visible ? "hidden" : "visible";
+      subMenuContainer.classList.toggle("active-submenu");
+    }
   });
-  
+});
 
 
 document.addEventListener('DOMContentLoaded',function(){

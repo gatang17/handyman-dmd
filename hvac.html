@@ -29,8 +29,8 @@
  <section class=" my-5">
   <div id="nav_bar2"></div>
   <div class="row g-5 align-items-center">
-    <div class="col-lg-6">
-      <img src="images/services/ac.jpg" class="img-fluid rounded shadow" alt="HVAC Maintenance">
+    <div class="col-lg-6 d-flex justify-content-end">
+      <img src="images/services/ac.jpg" class="img-fluid  rounded shadow" alt="HVAC Maintenance">
     </div>
     <div class="col-lg-6 sec_2">
       <h2 class="mb-4 t">¿Qué incluye nuestro servicio?</h2>
@@ -40,26 +40,18 @@
         <li class="list-group-item"><i class="fa-solid fa-check text-success me-2"></i> Revisión de fugas o condensación</li>
         <li class="list-group-item"><i class="fa-solid fa-check text-success me-2"></i> Diagnóstico de problemas y reparaciones menores</li>
       </ul>
+      <p class="text-muted small mt-2">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#modalEstimado" style="text-decoration: underline; color: inherit;">
+          Estimado sin costo si realizas el servicio
+        </a>
+      </p>
     </div>
+    
   </div>
 </section>
 
 <!-- ¿CÓMO FUNCIONA EL ESTIMADO? -->
-<section class="container my-5">
-  <div class="card border-0 shadow p-4">
-    <h4 class="text-center mb-3">¿Cuánto cuesta la visita?</h4>
-    <div class="text-center">
-      <h5 style="color: #1cbc69;">
-        💲 $<span id="precioBase"></span> + $<span id="precioMilla"></span> por milla recorrida
-      </h5>
-    </div>
-    <p class="text-muted text-center mt-3 mb-0">
-      El estimado incluye diagnóstico y presupuesto personalizado.<br>
-      Si contratas el servicio, <strong><span style="color: #1cbc69;">ES GRATIS</span>.</strong><br>
-      Si no, solo pagas la visita.
-    </p>
-  </div>
-</section>
+<section class="container my-5" id="section_info"></section>
 
 <!-- CTA FINAL ÚNICO -->
 <section class=" text-white text-center py-5 mt-5">

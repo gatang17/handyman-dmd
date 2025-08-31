@@ -1,12 +1,41 @@
 
 /*precios base*/
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', function() {
   const precioBase = 65;
   const precioMilla = 0.5;
 
+  const sec_info = ` 
+    <div class="modal fade" id="modalEstimado" tabindex="-1" aria-labelledby="modalEstimadoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="modalEstimadoLabel" style="color: #1c75bc;">¿Cómo funciona el estimado?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body text-center">
+            <h4 class="mb-2" style="color: #1cbc69;">
+                💲 $<span id="precioBase"></span> + $<span id="precioMilla"></span> por milla recorrida
+              </h4>
+              
+          <p class="mb-0 text-muted">
+            Incluye evaluación del problema y presupuesto personalizado.<br>
+            Si decides hacer el trabajo con nosotros, este monto <strong>se descuenta del total</strong>.<br>
+            Si no, solo pagarás por la visita.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  `;
+  document.getElementById('section_info').innerHTML = sec_info;
+
+  // Ahora sí existen los spans, puedes asignarles valores
   document.getElementById("precioBase").textContent = precioBase;
   document.getElementById("precioMilla").textContent = precioMilla.toFixed(2);
 });
+
+
+
 
 function getServiceFromURL() {
     const params = new URLSearchParams(window.location.search);

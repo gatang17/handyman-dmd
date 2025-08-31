@@ -35,11 +35,7 @@ text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
   .fa-angle-right:hover{
     visibility: visible;
   }
-  /* Efecto de saltito y glow */
-  .glow-bounce {
-    animation: bounce 1s infinite;
-    text-shadow: 0 0 5px #1c75bc, 0 0 10px #1c75bc;
-  }
+
   
   
   /*menu footer*/
@@ -57,7 +53,11 @@ text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
     color: #fff;
   }
 
-
+  /* Efecto de saltito y glow */
+  .glow-bounce {
+    animation: bounce 1.5s infinite;
+    text-shadow: 0 0 5px #61a0d4, 0 0 0px #7ca2c1;
+  }
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-5px); }

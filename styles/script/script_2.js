@@ -128,10 +128,6 @@ document.addEventListener('DOMContentLoaded',function(){
   
 
 
-
-
-
-
 document.addEventListener('DOMContentLoaded',function(){
   const footer_menu=` 
     <div class="row contenedo_f">

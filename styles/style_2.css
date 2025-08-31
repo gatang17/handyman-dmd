@@ -1,43 +1,44 @@
 
-/*menu superior*/
-#toggleIcon:hover{
-color: #1c75bc !important;
-font-size: 2rem;
-text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-}
 
+#toggleIcon{
+  font-size: 2rem;
+}
 .menu3 {
     color: gray;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
   }
   
-  .con_menu3:hover *,
-  .con_menu3:hover {
-    color: #fff;
-    background-color: #1c75bc;
-    cursor: pointer;
-  }
-  
   /* esta clase solo se activa cuando esta toggle y onClick, es decir que se queda activa y se desactiva en el siguiente click*/
   .active-submenu {
-    color: #fff !important;
+    color: #fFff !important;
     background-color: #1c75bc !important;
   }
   
-  #menu4 {
+  #menu4 { /*este es el submenu de servicios*/
     visibility: hidden;
   }
-  .fa-angle-right{
-    visibility: hidden;
+  
+ /* hover para el menu principal*/
+
+  
+#toggleIcon:hover{ /*boton superior*/
+  color: #1c75bc !important;
+  font-size: 2.5rem;
+   text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  }
+
+  .con_menu3:hover *,
+  .con_menu3:hover { /*esta es la fila de cada item*/
+    color: #ffff;
+    background-color: #1c75bc;
+    cursor: pointer;
   }
 
   #serv:hover *,
-  .fa-angle-right:hover{
+  .fa-angle-right:hover{ /*sub-menu Servicios*/
     visibility: visible;
   }
 
-  
-  
   /*menu footer*/
   .sec_3 {
     background-color: #1c75bc ;  /* tu color blanco */

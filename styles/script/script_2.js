@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <a href="index.html"><img src="images/logo/300ppi/Asset 1.png" alt="Logo" height="100" class="shadow"></a>
     </div>
     <div class="d-flex justify-content-center align-items-center mb-3">
-      <i id="toggleIcon" class="fa-solid fa-angles-down fs-1 glow-bounce" style="color: grey; cursor: pointer;"></i>
+      <i id="toggleIcon" class="fa-solid fa-angles-down  glow-bounce" style="color: grey; cursor: pointer;"></i>
     </div>
     <div class="row" id="navbarMenu" style="display: none;">
       <div class="col">
@@ -60,11 +60,11 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="d-flex col con_menu3" style="justify-content: flex-end;">
           <a class="text-decoration-none menu3 mb-3" href="index.html">HOME</a>
         </div>
-        <hr class="border border-1 border-secondary m-0">
+        <!--<hr class="border border-1 border-secondary m-0">-->
         <div id="cont_sub_menu" class="d-flex col con_menu3" style="justify-content: flex-end; cursor: pointer;">
           <a class="text-decoration-none menu3 mb-3">Servicios <i class="fa-solid fa-angle-right"></i></a>
         </div>
-        <hr class="border border-1 border-secondary m-0">
+        <!--<hr class="border border-1 border-secondary m-0">-->
         <div class="d-flex col con_menu3" style="justify-content: flex-end;">
           <a class="text-decoration-none menu3 mb-3" href="contact.html">Contacto</a>
         </div>
@@ -72,12 +72,11 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
       <div id="menu4" class="d-flex col" style="justify-content: flex-start; align-items: center; visibility: hidden;">
         <div class="col">
-          <div class="d-flex col con_menu3" style="justify-content: flex-start;"><a class="text-decoration-none menu3" href="plumbing.html">Plomeria</a></div>
-          <hr class="border border-1 border-secondary m-0">
-          <div class="d-flex col con_menu3" style="justify-content: flex-start;"><a class="text-decoration-none menu3" href="hvac.html">HVAC Mantenimiento</a></div>
-          <hr class="border border-1 border-secondary m-0">
-          <div class="d-flex col con_menu3" style="justify-content: flex-start;"><a class="text-decoration-none menu3" href="electricity.html">Electricidad</a></div>
-          <hr class="border border-1 border-secondary m-0">
+        <hr class="border border-1 border-secondary m-0">
+        <div class="d-flex col con_menu3" style="justify-content: flex-start;"><a class="text-decoration-none menu3" href="plumbing.html">Plomeria</a></div>
+        <div class="d-flex col con_menu3" style="justify-content: flex-start;"><a class="text-decoration-none menu3" href="hvac.html">HVAC Mantenimiento</a></div>
+        <div class="d-flex col con_menu3" style="justify-content: flex-start;"><a class="text-decoration-none menu3" href="electricity.html">Electricidad</a></div>
+        <hr class="border border-1 border-secondary m-0">
         </div>
       </div>
     </div>

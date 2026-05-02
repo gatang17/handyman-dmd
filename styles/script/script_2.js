@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuHTML = `
   <div class="row" style="width: 100vw;">
     <div class="d-flex justify-content-center align-items-center mb-5">
-      <a href="index.html"><img src="images/logo/300ppi/Asset 1.png" alt="Logo" height="100" class="shadow"></a>
+      <a href="index.html"><img src="images/logo/300ppi/Asset 1.png" alt="Logo" height="100"></a>
     </div>
     <div class="d-flex justify-content-center align-items-center mb-3">
       <i id="toggleIcon" class="fa-solid fa-angles-down  glow-bounce" style="color: grey; cursor: pointer;"></i>

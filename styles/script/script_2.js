@@ -47,7 +47,13 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   }
+const header = document.getElementById("mainHeader");
 
+if (header) {
+  window.addEventListener("scroll", () => {
+    header.classList.toggle("scrolled", window.scrollY > 60);
+  });
+}
   /* FOOTER */
   const footer = document.getElementById("foot_menu");
 

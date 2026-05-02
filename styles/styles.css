@@ -5,7 +5,6 @@
 :root {
   --navy: #0F1E2D;
   --blue: #324C63;
-  --primary-blue: #1c75bc;
   --orange: #C96A35;
   --light-bg: #F4F6F8;
   --white: #ffffff;
@@ -14,9 +13,7 @@
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
 }
 
-/* =========================
-   GENERAL
-   ========================= */
+/* GENERAL */
 
 * {
   box-sizing: border-box;
@@ -24,7 +21,7 @@
 
 body {
   margin: 0;
-  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Inter", "Segoe UI", sans-serif;
   background: var(--white);
   color: var(--text);
 }
@@ -45,7 +42,7 @@ h5 {
 }
 
 h1 {
-  font-size: clamp(2.7rem, 6vw, 5.2rem);
+  font-size: clamp(2.8rem, 6vw, 5.2rem);
   color: var(--white);
   letter-spacing: -1px;
 }
@@ -53,11 +50,10 @@ h1 {
 h2 {
   font-size: clamp(2rem, 4vw, 3rem);
   color: var(--navy);
-  margin-bottom: 1rem;
 }
 
 h3 {
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
   color: var(--navy);
 }
 
@@ -71,9 +67,7 @@ a {
   text-decoration: none;
 }
 
-/* =========================
-   BUTTONS
-   ========================= */
+/* BUTTONS */
 
 .btn,
 .btn-main {
@@ -94,9 +88,84 @@ a {
   color: var(--white);
 }
 
-/* =========================
-   HERO
-   ========================= */
+/* NAVBAR / MENU */
+
+.img_logo {
+  height: 72px;
+}
+
+#toggleIcon {
+  font-size: 2rem;
+  color: var(--navy);
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+#toggleIcon:hover {
+  color: var(--orange) !important;
+  transform: scale(1.08);
+}
+
+.nav-link,
+.lnkMenu {
+  position: relative;
+  color: var(--navy);
+  font-weight: 700;
+  transition: color 0.25s ease;
+}
+
+.nav-link::after,
+.lnkMenu::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--orange);
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover,
+.lnkMenu:hover {
+  color: var(--orange);
+}
+
+.nav-link:hover::after,
+.lnkMenu:hover::after {
+  width: 100%;
+}
+
+.dropdown-item {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.dropdown-item:hover {
+  background: var(--light-bg);
+  color: var(--orange);
+}
+
+.menu3 {
+  color: var(--muted);
+}
+
+.active-submenu {
+  color: var(--white) !important;
+  background-color: var(--orange) !important;
+}
+
+#menu4 {
+  visibility: hidden;
+}
+
+.con_menu3:hover,
+.con_menu3:hover * {
+  color: var(--white);
+  background-color: var(--navy);
+  cursor: pointer;
+}
+
+/* HERO */
 
 .sec_1 {
   min-height: 70vh;
@@ -119,12 +188,9 @@ a {
 
 #section_3 h3 {
   color: var(--navy);
-  font-size: clamp(1.5rem, 3vw, 2.4rem);
 }
 
-/* =========================
-   SERVICES
-   ========================= */
+/* SERVICES */
 
 #services {
   position: relative;
@@ -181,59 +247,7 @@ a {
   object-fit: cover;
 }
 
-/* =========================
-   NAV / MENU
-   ========================= */
-
-.img_logo {
-  height: 80px;
-}
-
-.dropdown-item {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-#toggleIcon {
-  font-size: 2rem;
-  transition: all 0.25s ease;
-}
-
-#toggleIcon:hover {
-  color: var(--primary-blue) !important;
-  font-size: 2.5rem;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
-}
-
-.menu3 {
-  color: gray;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.active-submenu {
-  color: var(--white) !important;
-  background-color: var(--primary-blue) !important;
-}
-
-#menu4 {
-  visibility: hidden;
-}
-
-.con_menu3:hover,
-.con_menu3:hover * {
-  color: var(--white);
-  background-color: var(--primary-blue);
-  cursor: pointer;
-}
-
-#serv:hover *,
-.fa-angle-right:hover {
-  visibility: visible;
-}
-
-/* =========================
-   FOOTER
-   ========================= */
+/* FOOTER */
 
 .sec_3 {
   background: var(--navy);
@@ -254,34 +268,36 @@ a {
   color: var(--white);
 }
 
-/* =========================
-   ICONS / EFFECTS
-   ========================= */
+/* ICONS */
 
-.glow-bounce {
-  animation: bounce 1.5s infinite;
-  text-shadow: 0 0 5px #61a0d4, 0 0 0px #7ca2c1;
+.icon_contact {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(47, 91, 124, 0.1);
+  color: #2F5B7C;
 }
 
+.icon_contact i,
+.icon_contact svg {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+
+/* REMOVE OLD EFFECTS */
+
+.glow-bounce,
 .static-icon {
   animation: none;
   box-shadow: none;
+  text-shadow: none;
 }
 
-@keyframes bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
-/* =========================
-   MOBILE
-   ========================= */
+/* MOBILE */
 
 @media (max-width: 767.98px) {
   .sec_1 {
@@ -316,32 +332,12 @@ a {
     max-width: 100%;
   }
 
-  .text-truncate-mobile {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  
-  .text-truncate-mobile.expanded {
-    -webkit-line-clamp: unset !important;
-    overflow: visible !important;
-    display: block !important;
-  }
-
-  .show-more-btn {
-    display: inline-block;
-  }
-
   .sec_3 p.clear_text {
     text-align: left;
   }
 }
 
-/* =========================
-   DESKTOP
-   ========================= */
+/* DESKTOP */
 
 @media (min-width: 768px) {
   .text-truncate-mobile {

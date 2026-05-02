@@ -183,7 +183,10 @@ a {
   color: white;
   padding: 4rem 6% 2rem;
 }
-
+.main-footer img{
+   max-width: 100px;
+}
+   
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

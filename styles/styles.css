@@ -270,11 +270,13 @@ img {
 /* FOOTER */
 
 .main-footer {
-  background: var(--navy);
-  color: white;
+ 
   padding: 4rem 6% 2rem;
 }
-
+.main-footer {
+  background: #2F5B7C;
+  color: white;
+}
 .footer-grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr;

@@ -32,76 +32,61 @@ img {
   display: block;
 }
 
-/* =========================
-   YOUR ANIMATED MENU
-   ========================= */
+/* HEADER */
 
-#nav_bar2 {
+.custom-header {
   width: 100%;
   background: #ffffff;
-  padding: 1.2rem 0 0.8rem;
+  padding: 1.2rem 6%;
   box-shadow: 0 6px 22px rgba(0,0,0,0.06);
   position: relative;
   z-index: 999;
+  text-align: center;
 }
 
-#nav_bar2 .row {
-  width: 100% !important;
-  margin: 0;
+.header-logo {
+  display: inline-block;
 }
 
-#nav_bar2 img {
+.header-logo img {
   height: 82px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 5px 8px rgba(0,0,0,0.12));
 }
 
-/* flechita */
-
-#toggleIcon {
-  font-size: 1.7rem;
-  color: var(--blue) !important;
+.menu-arrow {
+  display: block;
+  margin: 0.7rem auto 0;
+  border: 0;
+  background: transparent;
+  color: var(--blue);
+  font-size: 1.6rem;
   cursor: pointer;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
-#toggleIcon:hover {
-  color: var(--orange) !important;
-  transform: translateY(3px);
+.menu-arrow:hover {
+  color: var(--orange);
 }
 
-/* animación suave de flecha */
-
-.glow-bounce {
-  animation: softBounce 1.6s infinite;
-  text-shadow: none;
+.menu-arrow.open {
+  transform: rotate(180deg);
+  color: var(--orange);
 }
 
-@keyframes softBounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(5px);
-  }
-}
-
-.static-icon {
-  animation: none;
-  box-shadow: none;
-  text-shadow: none;
-}
-
-/* menu abierto */
-
-#navbarMenu {
-  width: 100%;
-  background: #ffffff;
-  padding: 1rem 8% 1.4rem;
-  border-top: 1px solid rgba(15,30,45,0.08);
+.animated-menu {
+  display: none;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(15,30,45,0.1);
   animation: menuDrop 0.35s ease forwards;
+}
+
+.animated-menu.open {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  align-items: flex-start;
 }
 
 @keyframes menuDrop {
@@ -116,79 +101,60 @@ img {
   }
 }
 
-/* columnas del menú */
-
-#navbarMenu .col {
-  padding: 0 1rem;
+.menu-main,
+.services-submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
 }
 
-.con_menu3 {
-  padding: 0.55rem 0;
-  transition: all 0.25s ease;
-}
-
-.menu3 {
+.menu-main a,
+.menu-main button,
+.services-submenu a {
   color: var(--navy);
   font-weight: 800;
-  letter-spacing: 0.06em;
   text-transform: uppercase;
+  letter-spacing: 0.06em;
   font-size: 0.95rem;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
   transition: color 0.25s ease, transform 0.25s ease;
 }
 
-.con_menu3:hover,
-.con_menu3:hover * {
-  background: transparent !important;
-  color: var(--orange) !important;
-  cursor: pointer;
+.menu-main a:hover,
+.menu-main button:hover,
+.services-submenu a:hover,
+.menu-main button.active {
+  color: var(--orange);
+  transform: translateX(6px);
 }
 
-.con_menu3:hover .menu3 {
-  transform: translateX(8px);
-}
-
-/* submenu */
-
-#menu4 {
-  visibility: hidden;
-  opacity: 0;
-  transform: translateX(-10px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-#menu4[style*="visible"] {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.active-submenu {
-  color: var(--orange) !important;
-  background: transparent !important;
-}
-
-.active-submenu .menu3,
-.active-submenu * {
-  color: var(--orange) !important;
-}
-
-#cont_sub_menu i {
+.menu-main button i {
   margin-left: 0.35rem;
   transition: transform 0.25s ease;
 }
 
-.active-submenu i {
+.menu-main button.active i {
   transform: rotate(90deg);
 }
 
-/* líneas del menú */
-
-#navbarMenu hr {
-  border-color: rgba(15,30,45,0.12) !important;
+.services-submenu {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-10px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* =========================
-   HERO
-   ========================= */
+.services-submenu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+/* HERO */
 
 .sec_1 {
   min-height: 70vh;
@@ -218,9 +184,7 @@ img {
   font-size: clamp(1.3rem, 2.5vw, 2rem);
 }
 
-/* =========================
-   BUTTONS
-   ========================= */
+/* BUTTONS */
 
 .btn,
 .btn-main {
@@ -241,9 +205,7 @@ img {
   color: white;
 }
 
-/* =========================
-   SERVICES
-   ========================= */
+/* SERVICES */
 
 #services {
   background: var(--light-bg);
@@ -305,115 +267,93 @@ img {
   object-fit: cover;
 }
 
-/* =========================
-   FOOTER
-   ========================= */
+/* FOOTER */
 
-.sec_3 {
+.main-footer {
   background: var(--navy);
   color: white;
   padding: 4rem 6% 2rem;
 }
 
-.contenedo_f {
-  width: 100%;
-  margin: 0;
-  align-items: flex-start;
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
 }
 
-.sec_3 img {
-  width: 230px !important;
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.footer-logo {
+  width: 230px;
   max-width: 100%;
   height: auto;
   object-fit: contain;
   margin-bottom: 1rem;
 }
 
-.sec_3 h2,
-.sec_3 .h2_f {
+.footer-col h3 {
   color: white;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 800;
+  margin-bottom: 0.8rem;
   text-transform: uppercase;
-  margin-bottom: 1rem;
 }
 
-.sec_3 p,
-.sec_3 a {
-  color: rgba(255,255,255,0.72) !important;
+.footer-col p,
+.footer-col a {
+  color: rgba(255,255,255,0.72);
   font-size: 0.95rem;
   line-height: 1.6;
+  margin: 0;
 }
 
-.sec_3 a:hover {
-  color: var(--orange) !important;
+.footer-col a:hover {
+  color: var(--orange);
 }
 
-.sec_3 p.clear_text {
-  text-align: left;
-  margin: 0.25rem 0;
-}
-
-.sec_3 .navbar-nav {
-  gap: 0.25rem;
-}
-
-.sec_3 .nav-link {
-  padding: 0.2rem 0;
-}
-
-.sec_3::after {
-  content: "© 2026 Handyman D.M.D.";
-  display: block;
+.footer-bottom {
   text-align: center;
   margin-top: 3rem;
-  padding-top: 1.2rem;
   border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: 1.2rem;
+}
+
+.footer-bottom p {
   color: rgba(255,255,255,0.5);
+  margin: 0;
   font-size: 0.9rem;
 }
 
-/* =========================
-   CONTACT ICONS
-   ========================= */
-
-.icon_contact {
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: rgba(47, 91, 124, 0.1);
-  color: #2F5B7C;
-}
-
-.icon_contact i,
-.icon_contact svg {
-  font-size: 18px;
-  width: 18px;
-  height: 18px;
-}
-
-/* =========================
-   RESPONSIVE
-   ========================= */
+/* RESPONSIVE */
 
 @media (max-width: 768px) {
-  #nav_bar2 img {
+  .header-logo img {
     height: 68px;
   }
 
-  #navbarMenu {
-    padding: 1rem 6% 1.4rem;
-  }
-
-  #navbarMenu {
+  .animated-menu.open {
     flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
   }
 
-  #menu4 {
-    margin-top: 1rem;
+  .menu-main a,
+  .menu-main button,
+  .services-submenu a {
+    text-align: center;
+  }
+
+  .services-submenu {
+    transform: translateY(-8px);
+  }
+
+  .services-submenu.open {
+    transform: translateY(0);
   }
 
   .sec_1 {
@@ -444,22 +384,14 @@ img {
     margin: 2rem auto;
   }
 
-  .sec_3 {
+  .footer-grid {
+    grid-template-columns: 1fr;
     text-align: center;
   }
 
-  .sec_3 img {
-    width: 190px !important;
+  .footer-logo {
+    width: 190px;
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .sec_3 p.clear_text {
-    text-align: center;
-  }
-
-  .sec_3 .col-md-3,
-  .sec_3 .col-md-5 {
-    margin-bottom: 2rem;
   }
 }

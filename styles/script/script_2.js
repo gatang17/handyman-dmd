@@ -45,60 +45,56 @@ document.addEventListener('DOMContentLoaded', function() {
 
 */
 document.addEventListener("DOMContentLoaded", () => {
-
   const menuHTML = `
-  <header class="main-header" id="mainHeader">
-    <div class="header-inner">
+    <header class="main-header" id="mainHeader">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <img src="images/logo/300ppi/Asset 1.png" alt="Logo">
+        </a>
 
-      <a href="index.html" class="logo">
-        <img src="images/logo/300ppi/Asset 1.png" alt="Logo">
-      </a>
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="#services">Services</a>
+          <a href="aboutus.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
 
-      <nav class="main-nav">
+        <div class="menu-toggle" id="menuToggle">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu">
         <a href="index.html">Home</a>
         <a href="#services">Services</a>
         <a href="aboutus.html">About</a>
         <a href="contact.html">Contact</a>
-      </nav>
-
-      <div class="menu-toggle" id="menuToggle">
-        <i class="fa-solid fa-bars"></i>
       </div>
-
-    </div>
-
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html">Home</a>
-      <a href="#services">Services</a>
-      <a href="aboutus.html">About</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </header>
+    </header>
   `;
 
-  document.getElementById("nav_bar2").innerHTML = menuHTML;
+  const navBar = document.getElementById("nav_bar2");
 
-  // MOBILE TOGGLE
-  const toggle = document.getElementById("menuToggle");
-  const mobileMenu = document.getElementById("mobileMenu");
+  if (navBar) {
+    navBar.innerHTML = menuHTML;
 
-  toggle.addEventListener("click", () => {
-    mobileMenu.classList.toggle("active");
-  });
+    const toggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const header = document.getElementById("mainHeader");
 
-  // SHRINK HEADER
-  const header = document.getElementById("mainHeader");
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 60) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
+    if (toggle && mobileMenu) {
+      toggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("active");
+      });
     }
-  });
 
+    if (header) {
+      window.addEventListener("scroll", () => {
+        header.classList.toggle("scrolled", window.scrollY > 60);
+      });
+    }
+  }
 });
-
   // ----- ELEMENTOS -----
   const icon = document.getElementById("toggleIcon");
   const navbarMenu = document.getElementById("navbarMenu");
